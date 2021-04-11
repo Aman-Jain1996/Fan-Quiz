@@ -3,46 +3,53 @@ var chalk= require('chalk') ;
 const log = console.log;
 var count=0;
 
-log(chalk.bold('Welcome to  About Info CLI App....... ')+'\n');
+log(chalk.bold('Welcome to Fan Quiz ....... ')+'\n');
 
-log('This App is a quiz about basic info of '+ chalk.bold.bgBlack.underline('Aman Jain')+'\n');
+log(chalk.bold.bgMagenta(' # Chinna Thala  # MSD  # Whistle Podu')  +'\n');
 
 var userName = readLineSync.question('Let me have your name first !!    ' , {hideEchoBack:true});
 
-log('\n');
 
-log(chalk.bold('Welcome '+chalk.underline.blueBright(userName))+'\n');
+log(chalk.bold('Welcome '+chalk.yellowBright.bold(userName))+'\n');
 
+log(chalk.bold('Welcome to the Chinna Thala quiz !! \n'+chalk.yellowBright.bold('Are you a Chinna Thala Fan ?'))+'\n');
 
 log("Let's start the quiz !!  You will score +1 for every right answer and -1 for every wrong answer" + '\n');
 
 var questionOne ={
-  question:'Where do i live currently? ',
-  answer : 'Kanpur'
+  question:'Where was Dhoni born? ',
+  answer : 'Ranchi'
 }
 
 var questionTwo ={
-  question:'Where do i work currently? ',
-  answer : 'Infosys'
+  question:'What is the NickName of Dhoni? ',
+  answer : 'Mahi'
 }
 
 var questionThree ={
-  question:'What is my Month of Birth? ',
-  answer : 'November'
+  question:'When did Dhoni made his international debut (Year)? ',
+  answer : '2004'
 }
 
 var questionFour ={
-  question:"Current Working City? ",
-  answer : 'Pune'
+  question:"Dhoni played for which state in Ranji Trophy (debut team)? ",
+  answer : 'Bihar'
 }
 
 var questionFive ={
-  question:"Favourite IPL Team? ",
-  answer : 'CSK'
+  question:" What is the count of Dhoni's total centuries in international Cricket ? ",
+  answer : '16'
+}
+
+var questionSix ={
+  question:" What is the highest score Dhoni has made in  international Cricket ? ",
+  answer : '224'
 }
 
 
-var question =[questionOne,questionTwo,questionThree, questionFour,questionFive];
+
+
+var question =[questionOne,questionTwo,questionThree, questionFour,questionFive,questionSix];
 
 function checkAnswer(i,Answer){
   if (question[i].answer.toUpperCase()===Answer.toUpperCase()){
@@ -50,7 +57,7 @@ function checkAnswer(i,Answer){
     log(chalk.green("Hurrah!! That's Right + 1 for that" + '\n'));
   }
   else{
-    log(chalk.red("Oops!! That was wrong  - 1 for that"+'\n'));
+    log(chalk.redBright("Oops!! That was wrong  - 1 for that"+'\n'));
   }
 }
 
@@ -60,11 +67,11 @@ for (var i=0 ; i < question.length ; i++){
   checkAnswer(i,inputAnswer);
 }
 
-if(count===5){
-log('That was a perfect Run!! 5/5');
+if(count===6){
+log(chalk.yellowBright('That was a perfect Run!! 6/6 \n' + chalk.underline('You are a Mahi Fan 👏 👏 👏')));
 }
 else{
-  log("Tht's good !! You Scored " + count+ "/5");
+  log("That's good !! You Scored " + count+ "/6");
 }
 
 
